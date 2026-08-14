@@ -1,0 +1,1 @@
+console.log("BA4L JavaScript loaded");
