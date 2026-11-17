@@ -675,3 +675,13 @@
             }
             .feature-main { padding: 22px; }
         }
+
+/* Episode library and history prompts */
+[id] { scroll-margin-top: 100px; }
+.history-prompts { padding-left: 20px; line-height: 1.6; }
+.history-prompts a { margin-top: 8px; }
+.topic-card::after { pointer-events: none; }
+.site-shell.newsletter { margin-left: auto; margin-right: auto; }
+.episode-title { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; }
+.episode-content { max-width: 850px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
