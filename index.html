@@ -26,7 +26,7 @@
                 <a href="#explore">Explore</a>
                 <a href="#research">Research</a>
                 <a href="#updates">Legal Updates</a>
-                <a href="#podcast">Podcast</a>
+                <a href="#podcast">Podcasts</a>
                 <a class="nav-button" href="#assistant">Ask the AI</a>
             </nav>
         </div>
@@ -113,6 +113,11 @@
                         <h3>History</h3>
                         <p>Slavery, Reconstruction, Jim Crow, the Great Migration, Civil Rights, and the Black Belt.</p>
                         <a href="#assistant">Ask about history →</a>
+                        <ul class="history-prompts">
+                            <li><a href="#assistant" data-question="How did Reconstruction change Black political power?">How did Reconstruction change Black political power?</a></li>
+                            <li><a href="#assistant" data-question="How did Jim Crow restrict Black Americans’ rights?">How did Jim Crow restrict Black Americans’ rights?</a></li>
+                            <li><a href="#assistant" data-question="How did the Great Migration change Black communities?">How did the Great Migration change Black communities?</a></li>
+                        </ul>
                     </article>
 
                     <article class="topic-card">
@@ -205,7 +210,19 @@
 
                 <div class="newsletter-actions">
                     <a class="primary-button" href="#assistant">Ask about an episode</a>
-                    <a class="secondary-button" href="#explore">Browse subjects</a>
+                    <a class="secondary-button" href="#episodes">Browse subjects</a>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="episodes" aria-labelledby="episodes-heading">
+            <div class="site-shell">
+                <div class="section-header"><div><div class="eyebrow">Episode library</div><h2 id="episodes-heading">Explore our conversations.</h2></div><p>Preview titles and summaries. Episode audio, transcripts, and sources will be added as each page is completed.</p></div>
+                <div class="topic-grid">
+                    <article class="topic-card"><span class="source-chip">Coming soon</span><h3>Black American For Life</h3><p>An introduction to Norman’s conversations about Black American history, lived experience, and the choices that shape our future.</p><a href="podcasts/black-american-for-life.html">View episode page →</a></article>
+                    <article class="topic-card"><span class="source-chip">Coming soon</span><h3>MAGA: Again—When?</h3><p>A conversation about the promise of making America great again, asking which era is being remembered and who shared in its opportunities.</p><a href="podcasts/maga-again-when.html">View episode page →</a></article>
+                    <article class="topic-card"><span class="source-chip">Coming soon</span><h3>Death of a Thousand Cuts</h3><p>A look at how pressures involving food access, pollution, voting, and education can accumulate in Black communities.</p><a href="podcasts/death-of-a-thousand-cuts.html">View episode page →</a></article>
+                    <article class="topic-card"><span class="source-chip">Coming soon</span><h3>Jim Crow and the Fight for Civil Rights</h3><p>A discussion connecting segregation, the civil rights movement, and the continuing struggle to protect equal rights.</p><a href="podcasts/jim-crow-civil-rights.html">View episode page →</a></article>
+                    <article class="topic-card"><span class="source-chip">Coming soon</span><h3>Food Insecurity and the Black Belt</h3><p>A discussion of food access, SNAP, and Project 2025 proposals, with a focus on Black families and communities in the Black Belt.</p><a href="podcasts/food-insecurity-black-belt.html">View episode page →</a></article>
                 </div>
             </div>
         </section>
@@ -240,6 +257,13 @@
                 toast.classList.remove("show");
             }, 3200);
         }
+
+        document.querySelectorAll("[data-question]").forEach((link) => {
+            link.addEventListener("click", () => {
+                input.value = link.dataset.question;
+                input.focus({ preventScroll: true });
+            });
+        });
 
         function submitQuestion() {
             const question = input.value.trim();
